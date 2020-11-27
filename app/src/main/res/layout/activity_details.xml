@@ -6,70 +6,224 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="406dp"
-        android:layout_height="281dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="-10dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic"
-        tools:ignore="MissingConstraints" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pantai Selatan"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="283dp"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="200Km"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="313dp"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id = "@+id/tv_id_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="87dp"
-        android:layout_height="72dp"
-        app:srcCompat="@drawable/ic_baseline_map_24"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="283dp"
-        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="412dp"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/singapore"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="199dp"
-        android:layout_height="47dp"
-        android:text="Deskripsi"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="372dp"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Pantai Selatan"
+                android:layout_below="@id/detail_image"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:fontFamily="@font/montserrat_semi_bold" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="206dp"
-        android:layout_height="46dp"
-        android:text="Foto&amp;Video"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="372dp"
-        tools:ignore="MissingConstraints" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="383dp"
-        android:layout_height="195dp"
-        android:text="Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City,
-        and the Red Dot, is a global city in Southeast Asia and the world\'s only island city-state.
-        It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia
-        and peninsular Malaysia, with Indonesia\'s Riau Islands to the south. Singapore\'s territory
-        consists of the diamond-shaped main island and 62 islets."
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="430dp"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="206dp"
+            android:layout_height="100dp"
+            android:layout_marginVertical="315dp"
+            android:paddingVertical="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_title"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="200 Km"
+                android:textColor="#000000"
+                android:textSize="13dp" />
+
+            <ImageButton
+                android:id="@+id/bt_rating"
+                android:layout_width="105dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_title"
+                android:background="@android:color/transparent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/rating"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="206dp"
+            android:layout_height="100dp"
+            android:layout_marginVertical="315dp"
+            android:layout_marginLeft="205dp"
+            android:paddingVertical="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/bt_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_title"
+                android:background="@android:color/transparent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_map_detail"
+                android:gravity="center_vertical"
+                android:tint="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:layout_below="@id/bt_direction"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Direction"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="415dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_image"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bt_rating"
+                android:background="@drawable/button_detail_background"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="16dp"
+                android:text="Deskripsi"
+                android:textAllCaps="false"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/bt_description"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_direction"
+                android:background="@drawable/button_detail_background"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="16dp"
+                android:text="Foto &amp; Video"
+                android:textAllCaps="false"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="465dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_below="@id/bt_description"
+                android:text="@string/singapore_description"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="615dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/button_detail_background">
+
+            <ImageButton
+                android:id="@+id/bt_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_title"
+                android:layout_gravity="center_vertical"
+                android:background="@android:color/transparent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_map_1"
+                android:tint="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/tv_description"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:text="Jl. Selatan Gang Buntu No.5"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <TextView
+                android:id="@+id/tv_title_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center_vertical"
+                android:text="Contact:"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:text="081234567890"
+                android:textColor="#000000"
+                android:textSize="13dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </LinearLayout>
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,9 @@ public class DataModelDashboard {
 @SerializedName("id")
 private int id;
 
+@SerializedName("category_id")
+private int category_id;
+
 @SerializedName("name")
 private String name;
 
@@ -16,17 +19,17 @@ private String address;
 @SerializedName("description")
 private String description;
 
-@SerializedName("category_id")
-private int category_id;
+@SerializedName("image")
+private String image;
 
 @SerializedName("contact")
-private double contact;
+private String contact;
 
 @SerializedName("latitude")
-private float latitude;
+private double latitude;
 
 @SerializedName("longitude")
-private float longitude;
+private double longitude;
 
 @SerializedName("distance")
 private int distance;
@@ -71,27 +74,35 @@ private int distance;
         this.category_id = category_id;
     }
 
-    public double getContact() {
+//    public String getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
+
+    public String getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(String contact) {
         this.contact = contact;
     }
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(float latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(float longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
